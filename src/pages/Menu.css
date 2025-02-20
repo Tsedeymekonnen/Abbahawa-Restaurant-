@@ -1,0 +1,123 @@
+.menu-page {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #f9f9f9;
+    
+  }
+  
+  .menu-section {
+    margin: 3rem auto;
+    max-width: 1200px;
+  }
+  
+  .menu-section h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid #ffcc00;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+  }
+  
+  .menu-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+  }
+  
+  .menu-item {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .menu-item:hover {
+    transform: translateY(-5px);
+  }
+  
+  .menu-item-image {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+  
+  .menu-item-details h3 {
+    font-size: 1.5rem;
+    color: #222;
+    margin-bottom: 0.5rem;
+  }
+  
+  .description {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .price {
+    color: #ffcc00;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .cta-section {
+    margin-top: 4rem;
+    padding: 2rem;
+    background-color: #333;
+    color: white;
+    border-radius: 10px;
+  }
+  
+  .cta-section p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .cta-button {
+    background-color: #ffcc00;
+    color: #333;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+  
+  .cta-button:hover {
+    background-color: #ffd633;
+  }
+  .order-button {
+    background-color: #28a745;
+    color: white;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 1rem;
+  }
+  
+  .order-button:hover {
+    background-color: #218838;
+  }
+  
+  .order-success {
+    margin-top: 2rem;
+    color: #28a745;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  

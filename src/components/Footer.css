@@ -1,0 +1,9 @@
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  width: 97.6%;
+  position: relative; /* Change from fixed to relative */
+  margin-top: auto; /* Push footer to the bottom */
+}

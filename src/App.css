@@ -1,0 +1,9 @@
+.App {
+  text-align: center;
+  padding: 1rem;
+}
+
+.page {
+  margin-top: 2rem;
+  margin-bottom: 4rem; /* To avoid footer overlap */
+}

@@ -1,0 +1,68 @@
+/* General page styling */
+.orders-container {
+    font-family: Arial, sans-serif;
+    /* padding: 10px; */
+    max-width: 1200px;
+    margin: 0 auto;
+    margin: 150px;
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #f9f9f9;
+   
+  }
+  .filter{
+    padding: 10px;
+    margin: 10px;
+  }
+  .orders-container h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Table styling */
+  .orders-table {
+    width: 100%;
+    padding: 50px;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .orders-table th,
+  .orders-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .orders-table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .orders-table tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .cancel-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .cancel-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  .completed-order {
+    background-color: #e6ffe6; /* Light green background for completed orders */
+  }
+  
+  .completed-order td {
+    color: #008000; /* Dark green text for better contrast */
+  }
