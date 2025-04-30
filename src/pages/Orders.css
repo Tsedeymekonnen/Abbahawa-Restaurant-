@@ -3,9 +3,9 @@
     font-family: Arial, sans-serif;
     /* padding: 10px; */
     max-width: 1200px;
-    margin: 0 auto;
-    margin: 150px;
-    padding: 4rem 2rem;
+    margin: 0 ;
+    margin: 10px;
+    padding: 2rem 1rem;
     text-align: center;
     background-color: #f9f9f9;
    
@@ -66,3 +66,41 @@
   .completed-order td {
     color: #008000; /* Dark green text for better contrast */
   }
+  .cancelled-order td {
+    color: #FF0000; /* Red text for canceled orders */
+    font-weight: bold;
+}
+/* Responsive design */
+@media (max-width: 768px) {
+  
+
+  /* Ensure table is scrollable on small screens */
+  .table-responsive {
+    overflow-x: auto;
+  }
+
+
+ .orders-table {
+    margin: 0px;
+    padding: 0px; /* Reducing padding for smaller screens */
+    font-size: 12px; /* Adjust font size for smaller screens */
+  }
+  /* General page styling */
+.orders-container {
+  font-family: Arial, sans-serif;
+  /* padding: 10px; */
+  overflow-x: auto;
+  margin: 0px;
+  padding: 0px ;
+  text-align: center;
+
+  background-color: #f9f9f9;
+ 
+}
+.orders-table th,
+  .orders-table td {
+    padding: 1px 1px;
+  
+  }
+
+}

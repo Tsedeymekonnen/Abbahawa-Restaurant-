@@ -14,7 +14,6 @@ const Dashboard = () => {
           <Link className="nav-item nav-link" to="/dashboard/add">Add Menu</Link>
         </div>
       </nav>
-
       <Routes>
         <Route path="/" element={<MenuList />} />
         <Route path="/add" element={<MenuForm />} />

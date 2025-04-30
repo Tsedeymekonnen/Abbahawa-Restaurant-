@@ -82,8 +82,7 @@ const Orders = () => {
     const orderDateTime = new Date(orderDate);
     const currentTime = new Date();
     const cutoffTime = new Date(orderDateTime);
-    cutoffTime.setHours(16, 0, 0, 0); // Set cutoff time to 4:00 PM
-
+    cutoffTime.setHours(10, 0, 0, 0); // Set cutoff time to 12 6:00 AM Ethiopia time
     return currentTime < cutoffTime;
   };
 
@@ -118,38 +117,51 @@ const Orders = () => {
               <th>Quantity</th>
               <th>Order Date</th>
               <th>Status</th>
-              {user?.role === "admin" && <th>Actions</th>}
+              <th>Actions</th> {/* Now visible for users too */}
             </tr>
           </thead>
           <tbody>
             {orders.map((order) => (
-              <tr
-              key={order.id}
-              className={order.status === 'completed' ? 'completed-order' : ''}
-            >
-              <td>{order.id}</td>
-              <td>{order.user?.email || "Unknown User"}</td>
-              <td>{order.menu?.title || "Unknown Menu Item"}</td>
-              <td>{order.quantity}</td>
-              <td>{new Date(order.created_at).toLocaleString()}</td>
-              <td>{order.status}</td>
-              {user?.role === "admin" && (
+                <tr
+                key={order.id}
+                className={
+                  order.status === "completed"
+                    ? "completed-order"
+                    : order.status === "cancelled"
+                    ? "cancelled-order"
+                    : ""
+                }
+              >
+                <td>{order.id}</td>
+                <td>{order.user?.email || "Unknown User"}</td>
+                <td>{order.menu?.title || "Unknown Menu Item"}</td>
+                <td>{order.quantity}</td>
+                <td>{new Date(order.created_at).toLocaleString()}</td>
+                <td>{order.status}</td>
                 <td>
-                  <select
-                    onChange={(e) => updateStatus(order.id, e.target.value)}
-                    value={order.status}
-                    disabled={
-                      order.status === 'cancelled' ||
-                      (order.status === 'pending' && new Date().getHours() >= 16)
-                    }
-                  >
-                    {/* <option value="pending">Pending</option> */}
-                    <option value="completed">Completed</option>
-                    <option value="cancelled">Cancelled</option>
-                  </select>
+               {/* ✅ Users can cancel their OWN orders */}
+{(user?.id === order.user_id || user?.role === "admin") && (
+  <button
+    onClick={() => updateStatus(order.id, 'cancelled')}
+    disabled={
+      order.status === 'cancelled' || !canCancelOrder(order.created_at)
+    }
+  >
+    Cancel Order
+  </button>
+)}
+                  
+                  {/* ✅ Admins can mark orders as completed */}
+                  {user?.role === "admin" && (
+                    <button
+                      onClick={() => updateStatus(order.id, 'completed')}
+                      disabled={order.status === 'completed'}
+                    >
+                      Mark as Completed
+                    </button>
+                  )}
                 </td>
-              )}
-            </tr>
+              </tr>
             ))}
           </tbody>
         </table>

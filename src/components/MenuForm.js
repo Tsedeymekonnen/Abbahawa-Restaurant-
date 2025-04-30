@@ -26,7 +26,6 @@ const MenuForm = () => {
     data.append("description", formData.description);
     data.append("price", formData.price);
     if (formData.image) data.append("image", formData.image);
-
     try {
       if (id) {
         // If updating an existing menu

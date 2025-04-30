@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../../my-laravel-backend"
+		},
+		{
+			"path": "../.."
+		}
+	],
+	"settings": {
+		"postman.settings.dotenv-detection-notification-visibility": false
+	}
+}

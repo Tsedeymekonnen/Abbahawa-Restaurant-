@@ -9,7 +9,7 @@ const Home = () => {
       {/* Video Section */}
       <section id="home" className="video-section">
         <video autoPlay loop muted className="video-background">
-          <source src={require('../assets/video.mp4')} type="video/mp4" />
+          <source src={require('../assets/video1.mp4')} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="welcome-text">
@@ -72,7 +72,7 @@ const Home = () => {
             <div className="contact-item">
               
               <FontAwesomeIcon icon={faMapMarkerAlt} className="contact-icon" />
-              <p>123 Main Street, City, Country</p>
+              <p>Lebu Mebrat, Addis Ababa, Ethiopia</p>
             </div>
             <div className="contact-item">
               <FontAwesomeIcon icon={faPhone} className="contact-icon" />

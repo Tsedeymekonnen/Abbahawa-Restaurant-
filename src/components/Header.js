@@ -47,10 +47,10 @@ const Header = () => {
   return (
     <header className="header">
       <div className="logo-container">
-        <button onClick={() => scrollToSection('home')} className="logo-link">
+        <button onClick={() => scrollToSection('Menu')} className="logo-link">
           <img src={require('../assets/logo.jpg')} alt="Abbahawa Restaurant Logo" className="logo-img" />
         </button>
-        <h1 className="restaurant-name">Abbahawa Restaurant</h1>
+        <h1 className="restaurant-name">Abbahawa Canteen</h1>
       </div>
 
       <div className="menu-icon" onClick={() => setIsMenuOpen(!isMenuOpen)}>

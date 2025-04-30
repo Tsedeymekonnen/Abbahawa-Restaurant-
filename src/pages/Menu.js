@@ -77,7 +77,7 @@ const Menu = () => {
             <div className="menu-item-details">
               <h3>{item.title}</h3>
               <p className="description">{item.description}</p>
-              <p className="price">${item.price}</p>
+              <p className="price">{item.price}</p>
               <button className="order-button" onClick={() => handleOrder(item.id, item.price)}>
   Order Now
 </button>
