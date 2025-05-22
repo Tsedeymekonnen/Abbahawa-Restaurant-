@@ -17,9 +17,11 @@ const Header = () => {
     const storedUser = localStorage.getItem('user');
     if (storedUser) {
       const user = JSON.parse(storedUser);
-      setUserRole(user.role); // Set the role from localStorage
+      setUserRole(user.role);
+    } else {
+      setUserRole(null);
     }
-  }, [token]); // Fetch and set user role whenever token changes
+  }, [token]);
 
   const scrollToSection = (id) => {
     if (location.pathname !== '/') {
@@ -39,7 +41,7 @@ const Header = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("token");
-    localStorage.removeItem("user"); // Remove user data on logout
+    localStorage.removeItem("user");
     navigate('/');
     window.location.reload();
   };
@@ -73,6 +75,7 @@ const Header = () => {
         <Link to="/menu" className={`nav-link ${location.pathname === '/menu' ? 'active' : ''}`}>
           Menu
         </Link>
+
         {token ? (
           <div
             className="profile-dropdown-container"
@@ -84,17 +87,24 @@ const Header = () => {
             </button>
             {showDropdown && (
               <div className="dropdown-menu">
-                {userRole === 'admin' && (
-                  <Link to="/dashboard" className="dropdown-item">
-                    Dashboard
-                  </Link>
+                {(userRole === 'super_admin') && (
+                  <>
+                    <Link to="/dashboard" className="dropdown-item">Dashboard</Link>
+                    <Link to="/signup" className="dropdown-item">Sign up</Link>
+                    <Link to="/UserManagement" className="dropdown-item">User Management</Link>
+                  </>
                 )}
-                {/* <Link to="/profile" className="dropdown-item">
-                  Profile
-                </Link> */}
-                <Link to="/Orders" className="dropdown-item">
-                  Order
-                </Link>
+                {(userRole === 'admin') && (
+                  <>
+                    <Link to="/dashboard" className="dropdown-item">Dashboard</Link>
+                    {/* No sign up or user management here */}
+                  </>
+                )}
+
+                {/* Regular users have no admin links */}
+
+                <Link to="/Orders" className="dropdown-item">Order Report</Link>
+                <Link to="/Profilepage" className="dropdown-item">Profile</Link>
                 <button onClick={handleLogout} className="dropdown-item">
                   <FontAwesomeIcon icon={faSignOutAlt} /> Logout
                 </button>

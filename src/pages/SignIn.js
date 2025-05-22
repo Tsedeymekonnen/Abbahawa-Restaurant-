@@ -59,7 +59,7 @@ const SignIn = () => {
         <button type="submit" className="submit-btn">Sign In</button>
       </form>
       {error && <p className="error-message">{error}</p>}
-      <p>Don't have an account? <a href="/signup">Sign Up</a></p>
+      {/* <p>Don't have an account? <a href="/signup">Sign Up</a></p> */}
     </div>
   );
 };

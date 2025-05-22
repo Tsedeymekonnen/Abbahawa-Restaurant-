@@ -11,6 +11,8 @@ import SignUp from './pages/SignUp';
 import Logout from "./pages/Logout";
 import Dashboard from "./components/Dashboard";
 import Orders from './pages/Orders';
+import Profilepage from './pages/ProfilePage';
+import UserManagement from './pages/UserManagement';
 function App() {
   return (
     <Router>
@@ -25,6 +27,8 @@ function App() {
           <Route path="/Logout" element={<Logout />} />
           <Route path="/dashboard/*" element={<Dashboard />} />
           <Route path="/Orders/" element={<Orders />} />
+          <Route path='profilepage' element= {<Profilepage />} />
+          <Route path='UserManagement' element= {<UserManagement />} />
         </Routes>
         <Footer />
       </div>
